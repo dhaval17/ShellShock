@@ -102,8 +102,8 @@ xmlhttp.send();
         <div class="modal-body" id="data">
           
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+      </div>
+    </div>
   </div>
 </body>
 </html>
