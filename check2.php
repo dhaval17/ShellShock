@@ -47,11 +47,9 @@ $header = stream_context_create(
 $req = file_get_contents($url, false, $header);
 if(preg_match("/$token/",$req))
 {
-echo 'Check confirmed. Server Vulnerable';
+echo 'Test #2 confirmed. Server Vulnerable';
 }
 }
-else if(preg_match("/(301|302|307|308)/", $http_response_header[0]))
-{ echo 'Redirected to some other location. Please use final URL. This probably means the server is not vulnerable';}
 else
 { echo "Error in Connection.";}
 
