@@ -8,7 +8,7 @@ if(!$url)
     echo "Please enter URL";
 	exit();
 }
-if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url))
+if(!preg_match("/\b(?:(?:https?):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url))
 {
 echo "Please use correct URL starting with http or https";
 exit();
