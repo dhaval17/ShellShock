@@ -1,0 +1,34 @@
+<?php
+error_reporting(0);
+
+$url = $_GET['url'];
+
+if(!$url) 
+{
+    echo "Please enter URL";
+	exit();
+}
+if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url))
+{
+echo "Please use correct URL starting with http or https";
+exit();
+}
+if(preg_match("/(127.0.0.1|192.*|10.*|localhost)/", $url))
+{
+echo "Private URLs are not allowed";
+exit();
+}
+
+$header = stream_context_create(
+    array(
+	'http' => array(
+            'method'  => 'GET',
+            'header'  => 'None'
+        )
+    )
+);
+$final = 'check2.php?url=' . $url;
+$req = file_get_contents($final, false, $header);
+echo $req;
+
+?>
