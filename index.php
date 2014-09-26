@@ -79,7 +79,7 @@ xmlhttp.send();
 		<br />
 		<button name="check" onclick="check()" class="btn btn-primary btn-lg" >Check</button>
 		<br /><h4>Example : http://example.com/cgi-bin/check.cgi </h4><br />
-		<div id="loading" style="display: none;"><img src="spinner.gif" /></div>
+		<div id="loading" style="display: none;"><img src="/img/spinner.gif" /></div>
 
 </div>
 <div class="row">
