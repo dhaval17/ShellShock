@@ -18,46 +18,48 @@
 <script>
 function check()
 {
-var count = 1;
-var url = document.getElementById('url').value;
+	var count = 1;
+	var url = document.getElementById('url').value;
 
-
-if(!url) { 
-
-document.getElementById("data").innerHTML="Input Field cannot be NULL";
-$('.bs-example-modal-sm').modal('show');
-count = 0;}
-
-if(!url.match(/^http([s]?):\/\/.*/) && count)
-{
-document.getElementById("data").innerHTML="Please use correct URL starting with http or https"
-$('.bs-example-modal-sm').modal('show');
-count = 0;}
-
-if(count)
-{
-document.getElementById('loading').style.display = "block";
-
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-		document.getElementById("data").innerHTML=xmlhttp.responseText;
+	//Check for NULL
+	if(!url) 
+	{ 
+		document.getElementById("data").innerHTML="Input Field cannot be NULL";
 		$('.bs-example-modal-sm').modal('show');
-		document.getElementById('loading').style.display = "none";
+		count = 0;
+	}
+	//Check for proper URL
+	if(!url.match(/^http([s]?):\/\/.*/) && count)
+	{
+		document.getElementById("data").innerHTML="Please use correct URL starting with http or https"
+		$('.bs-example-modal-sm').modal('show');
+		count = 0;
+	}
+	//Sending AJAX request
+	if(count)
+	{
+		document.getElementById('loading').style.display = "block";
 
-    }
-  }
-xmlhttp.open("GET","check.php?url="+url,true);
-xmlhttp.send();
+		if (window.XMLHttpRequest)
+		{
+			xmlhttp=new XMLHttpRequest();
+		}
+	else
+	{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("data").innerHTML=xmlhttp.responseText;
+			$('.bs-example-modal-sm').modal('show');
+			document.getElementById('loading').style.display = "none";
+	
+		}
+	}
+	xmlhttp.open("GET","check.php?url="+url,true);
+	xmlhttp.send();
 }
 }
 </script>
