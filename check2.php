@@ -5,7 +5,8 @@ $header = stream_context_create(
     array(
         'http' => array(
             'method'  => 'GET',
-            'header'  => 'User-Agent: () { :;};echo "4141nothing4141";'
+            'header'  => 'User-Agent: () { :;};echo "4141nothing4141";',
+            'timeout' => 8
         )
     )
 );
