@@ -13,7 +13,7 @@ if(!preg_match("/\b(?:(?:https?):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+
 echo "Please use correct URL starting with http or https";
 exit();
 }
-if(preg_match("/(127.0.0.1|192.*|10.*|localhost)/", $url))
+if(preg_match("/\b((?:https?):\/\/)(127.0.0.1|10.\d{1,3}.\d{1,3}.\d{1,3}|192.168.\d{1,3}.\d{1,3}|localhost)/i", $url))
 {
 echo "Private URLs are not allowed";
 exit();
