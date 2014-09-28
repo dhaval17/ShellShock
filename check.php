@@ -19,6 +19,8 @@ echo "Private URLs are not allowed";
 exit();
 }
 
+//remove the lines below if you want your scanner to allow scanning gov sites
+
 $header = stream_context_create(
     array(
 	'http' => array(
