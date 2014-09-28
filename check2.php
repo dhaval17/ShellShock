@@ -27,7 +27,7 @@ else if(preg_match("/500/", $http_response_header[0]))
     	array(
 		'http' => array(
         	    'method'  => 'GET',
-				'header'  => $header
+        	    'header'  => $header
 				)
 			)
 		);
@@ -42,7 +42,7 @@ else if(preg_match("/500/", $http_response_header[0]))
 	array(
 		'http' => array(
           	  'method'  => 'GET',
-		  	  'header'  => 'none'
+          	  'header'  => 'none'
 		  	  )
 		    )
 		);
