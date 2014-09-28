@@ -21,6 +21,18 @@ exit();
 
 //remove the lines below if you want your scanner to allow scanning gov sites
 
+$host = parse_url($url);
+$host = $host['host'];
+// stripping off sub-domain
+preg_match('/[^.]+\.[^.]+$/', $host, $matches);
+$l2 = $matches[0];
+//check for gov sites
+if(preg_match("/(gov)/i", $l2))
+{
+echo "Sorry, We don't prefer scanning government websites";
+exit();
+}
+
 $header = stream_context_create(
     array(
 	'http' => array(
