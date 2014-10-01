@@ -15,7 +15,21 @@
 <link href="/css/customx.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/purify.js"></script>
 <script>
+
+function hashinput()
+{
+if(location.hash)
+{
+var url = location.hash;
+url = DOMPurify.sanitize(url);
+var parts = url.replace( /(#)/ig, '' ).split('#');
+document.getElementById('url').value = parts;
+check();
+}
+}
+
 function check()
 {
 	var count = 1;
