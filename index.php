@@ -18,13 +18,14 @@
 <script src="/js/purify.js"></script>
 <script>
 
+//Accept from location.hash
 function hashinput()
 {
 if(location.hash)
 {
 var url = location.hash;
 url = DOMPurify.sanitize(url);
-var parts = url.replace( /(#)/ig, '' ).split('#');
+var parts = url.replace( /(#)/ig, '' );
 document.getElementById('url').value = parts;
 check();
 }
