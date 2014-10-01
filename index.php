@@ -21,14 +21,14 @@
 //Accept from location.hash
 function hashinput()
 {
-if(location.hash)
-{
-var url = location.hash;
-url = DOMPurify.sanitize(url);
-var parts = url.replace( /(#)/ig, '' );
-document.getElementById('url').value = parts;
-check();
-}
+	if(location.hash)
+	{
+		var url = location.hash;
+		url = DOMPurify.sanitize(url);
+		var parts = url.replace( /(#)/ig, '' );
+		document.getElementById('url').value = parts;
+		check();
+	}
 }
 
 function check()
