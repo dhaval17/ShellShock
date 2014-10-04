@@ -11,12 +11,12 @@
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="/favicon.ico">
 
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/customx.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/customx.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/purify.js"></script>
-<script src="/js/customx.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/purify.js"></script>
+<script src="js/customx.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
 		<br />
 		<button name="check" onclick="check()" class="btn btn-primary btn-lg" >Check</button>
 		<br /><h4>Example : http://example.com/cgi-bin/check.cgi </h4><br />
-		<div id="loading" style="display: none;"><img src="/img/spinner.gif" /></div>
+		<div id="loading" style="display: none;"><img src="img/spinner.gif" /></div>
 
 </div>
 <div class="row">
